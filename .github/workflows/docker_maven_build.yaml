@@ -30,4 +30,4 @@ jobs:
           push: true
           tags: ankush2642/java-maven-upyog:latest
           file: app-dockerfiles/app/Dockerfile
-          context: app-dockerfiles/app
+          context: .
