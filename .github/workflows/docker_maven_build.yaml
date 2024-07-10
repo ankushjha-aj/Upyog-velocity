@@ -22,5 +22,5 @@ jobs:
       - name: Build Docker image
         uses: docker/build-push-action@v3
         with:
-         path: app/Dockerfile
+         path: ./app-dockerfiles/app/
          tags: ankush2642/upyog-test:latest
