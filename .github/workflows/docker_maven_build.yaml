@@ -27,5 +27,5 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/java-maven-db:latest
-          file: /app-dockerfiles/app/Dockerfile
-          context: /app-dockerfiles/app
+          file: ./
+          context: ./
