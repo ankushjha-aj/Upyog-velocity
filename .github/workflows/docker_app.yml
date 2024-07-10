@@ -7,7 +7,7 @@ on:
 jobs: 
   # Docker Build
   Docker_Build :
-    uses:  ankushjha-aj/java_maven_project-main/.github/workflows/docker_build.yaml@main
+    uses: ankushjha-aj/java_maven_project-main/.github/workflows/docker_build.yaml@main
     secrets:
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
     with:
