@@ -1,32 +1,49 @@
-name: Build db Image
+name: Docker Build DB
 on:
-   push:
+  push:
+    branches:
+      - main
 
-jobs:
-  Docker_Build:
-    runs-on: ubuntu-latest
-    steps:
-      # Checkout
-      - name: Checkout
-        uses: actions/checkout@v4
+jobs: 
+  # Docker Build
+  Docker_Build_DB :
+    uses: ankushjha-aj/java_maven_project-main/.github/workflows/docker_build.yaml@main
+    secrets:
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+    with:
+      FILE: src/main/resources/db/Dockerfile
+      CONTEXT: src/main/resources/db
+
+# name: Build db Image
+# on:
+#    push:
+
+# jobs:
+#   Docker_Build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       # Checkout
+#       - name: Checkout
+#         uses: actions/checkout@v4
       
-      # Extract branch for docker tag
-      - name: Get branch name
-        run: echo "BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
+#       # Extract branch for docker tag
+#       - name: Get branch name
+#         run: echo "BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
         
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@4fd812986e6c8c2a69e18311145f9371337f27d4 # v3.4.0
+#       - name: Set up Docker Buildx
+#         uses: docker/setup-buildx-action@4fd812986e6c8c2a69e18311145f9371337f27d4 # v3.4.0
         
-      - name: Login to DockerHub
-        uses: docker/login-action@0d4c9c5ea7693da7b068278f7b52bda2a190a446 # v3.2.0
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
-      -
-        name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/velsof-vehicle-db:latest
-          file: src/main/resources/db/Dockerfile
-          context: src/main/resources/db
+#       - name: Login to DockerHub
+#         uses: docker/login-action@0d4c9c5ea7693da7b068278f7b52bda2a190a446 # v3.2.0
+#         with:
+#           username: ${{ secrets.DOCKERHUB_USERNAME }}
+#           password: ${{ secrets.DOCKERHUB_PASSWORD }}
+#       -
+#         name: Build and push
+#         uses: docker/build-push-action@v6
+#         with:
+#           push: true
+#           tags: ${{ secrets.DOCKERHUB_USERNAME }}/velsof-vehicle-db:latest
+#           file: src/main/resources/db/Dockerfile
+#           context: src/main/resources/db
