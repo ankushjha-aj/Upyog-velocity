@@ -22,6 +22,7 @@ jobs:
       - name: Build Docker image
         uses: docker/build-push-action@v2
         with:
-         file: ./app/Dockerfile
+         file: ./app-dockerfiles/app/Dockerfile
+         context: ./app-dockerfiles/app
          push: true
          tags: ankush2642/upyog-test:latest
