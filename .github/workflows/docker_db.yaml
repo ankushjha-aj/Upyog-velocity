@@ -25,4 +25,4 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/java-maven-upyog:latest
           file: src/main/resources/db/Dockerfile
-          context: /src/main/resources/db
+          context: src/main/resources/db
