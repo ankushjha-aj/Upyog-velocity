@@ -25,4 +25,4 @@ jobs:
          context: ./app-dockerfiles/app
          file: ./app-dockerfiles/app/Dockerfile
          push: true
-         tags: ${{ secrets.DOCKER_USERNAME }}/upyog-test:latest
+         tags: ankush2642/upyog-test:latest
