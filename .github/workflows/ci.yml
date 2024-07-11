@@ -9,19 +9,19 @@ jobs:
   Docker_Build_APP:
     uses: ankushjha-aj/java_maven_project-main/.github/workflows/docker_build.yaml@main
     secrets:
-      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERHUB_USERNAME: ${{ env.DOCKERHUB_USERNAME }}
       DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
     with:
       FILE: Dockerfile
       CONTEXT: ./
-      DOCKER_REPO: ankushjha-aj/upyog-velocity-app
+      DOCKER_REPO: ankush2642/upyog-velocity-app
 
   Docker_Build_DB:
     uses: ankushjha-aj/java_maven_project-main/.github/workflows/docker_build.yaml@main
     secrets:
-      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERHUB_USERNAME: ${{ env.DOCKERHUB_USERNAME }}
       DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
     with:
       FILE: src/main/resources/db/Dockerfile
       CONTEXT: src/main/resources/db
-      DOCKER_REPO: ankushjha-aj/upyog-velocity-db
+      DOCKER_REPO: ankush2642/upyog-velocity-db
