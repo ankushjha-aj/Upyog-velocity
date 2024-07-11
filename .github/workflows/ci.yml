@@ -10,7 +10,7 @@ jobs:
     uses: ankushjha-aj/java_maven_project-main/.github/workflows/docker_build.yaml@main
     secrets:
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_PASSWORD }}
+      DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
     with:
       FILE: Dockerfile
       CONTEXT: ./
@@ -20,7 +20,7 @@ jobs:
     uses: ankushjha-aj/java_maven_project-main/.github/workflows/docker_build.yaml@main
     secrets:
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_PASSWORD }}
+      DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
     with:
       FILE: src/main/resources/db/Dockerfile
       CONTEXT: src/main/resources/db
