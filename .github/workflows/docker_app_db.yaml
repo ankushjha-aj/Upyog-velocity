@@ -1,17 +1,17 @@
-name: Trigger Docker Build and Push for both APP and DB
-on:
-  push:
-    branches:
-      - main
+# name: Trigger Docker Build and Push for both APP and DB
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  call_docker_build_reusable:
-    uses: ankushjha-aj/java_maven_project-main/.github/workflows/docker_build_app_db.yaml@main
-    secrets:
-      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-      DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
-    with:
-      FILE_APP: Dockerfile
-      CONTEXT_APP: ./
-      FILE_DB: src/main/resources/db/Dockerfile
-      CONTEXT_DB: src/main/resources/db
+# jobs:
+#   call_docker_build_reusable:
+#     uses: ankushjha-aj/java_maven_project-main/.github/workflows/docker_build_app_db.yaml@main
+#     secrets:
+#       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+#       DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+#     with:
+#       FILE_APP: Dockerfile
+#       CONTEXT_APP: ./
+#       FILE_DB: src/main/resources/db/Dockerfile
+#       CONTEXT_DB: src/main/resources/db
