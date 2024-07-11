@@ -24,4 +24,4 @@ jobs:
     with:
       FILE: src/main/resources/db/Dockerfile
       CONTEXT: src/main/resources/db
-      DOCKER_REPO: upyog-velocity-db
+      DOCKER_REPO: ankush2642/upyog-velocity-db
