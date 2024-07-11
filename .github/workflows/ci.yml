@@ -1,0 +1,27 @@
+name: Docker Build And Push
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  # Docker Build
+  Docker_Build_APP:
+    uses: ankushjha-aj/java_maven_project-main/.github/workflows/docker_build.yaml@main
+    secrets:
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+    with:
+      FILE: Dockerfile
+      CONTEXT: ./
+      DOCKER_REPO: Upyog-velocity-app
+
+  Docker_Build_DB:
+    uses: ankushjha-aj/java_maven_project-main/.github/workflows/docker_build.yaml@main
+    secrets:
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+    with:
+      FILE: src/main/resources/db/Dockerfile
+      CONTEXT: src/main/resources/db
+      DOCKER_REPO: Upyog-velocity-db
