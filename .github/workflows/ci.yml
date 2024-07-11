@@ -14,7 +14,7 @@ jobs:
     with:
       FILE: Dockerfile
       CONTEXT: ./
-      DOCKER_REPO: upyog-velocity/upyog-velocity-app
+      DOCKER_REPO: ankushjha-aj/upyog-velocity-app
 
   Docker_Build_DB:
     uses: ankushjha-aj/java_maven_project-main/.github/workflows/docker_build.yaml@main
@@ -24,4 +24,4 @@ jobs:
     with:
       FILE: src/main/resources/db/Dockerfile
       CONTEXT: src/main/resources/db
-      DOCKER_REPO: upyog-velocity/upyog-velocity-db
+      DOCKER_REPO: ankushjha-aj/upyog-velocity-db
