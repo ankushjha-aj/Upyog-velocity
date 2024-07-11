@@ -9,7 +9,7 @@ jobs:
   Docker_Build_APP:
     uses: ankushjha-aj/java_maven_project-main/.github/workflows/docker_build.yaml@main
     secrets:
-      DOCKERHUB_USERNAME: ${{ env.DOCKERHUB_USERNAME }}
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
       DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
     with:
       FILE: Dockerfile
@@ -19,7 +19,7 @@ jobs:
   Docker_Build_DB:
     uses: ankushjha-aj/java_maven_project-main/.github/workflows/docker_build.yaml@main
     secrets:
-      DOCKERHUB_USERNAME: ${{ env.DOCKERHUB_USERNAME }}
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
       DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
     with:
       FILE: src/main/resources/db/Dockerfile
