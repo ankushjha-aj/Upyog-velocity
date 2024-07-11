@@ -1,19 +1,19 @@
-name: Docker Build App
-on:
-  push:
-    branches:
-      - main
+# name: Docker Build App
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs: 
-  # Docker Build
-  Docker_Build_APP :
-    uses: ankushjha-aj/java_maven_project-main/.github/workflows/docker_build.yaml@main
-    secrets:
-      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-      DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
-    with:
-      FILE: Dockerfile
-      CONTEXT: ./
+# jobs: 
+#   # Docker Build
+#   Docker_Build_APP :
+#     uses: ankushjha-aj/java_maven_project-main/.github/workflows/docker_build.yaml@main
+#     secrets:
+#       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+#       DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+#     with:
+#       FILE: Dockerfile
+#       CONTEXT: ./
 
 # name: Docker Build App
 # on:
